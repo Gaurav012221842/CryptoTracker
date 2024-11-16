@@ -2,6 +2,7 @@
 import React from "react";
 import store from "../../state/store";
 import { useNavigate } from "react-router-dom";
+import SearchBar from "../Search/searchBar";
 import DayNight from "../DayNight/DayNight"; // Import DayNight component
 
 function Navbar() {
@@ -33,11 +34,15 @@ function Navbar() {
       <div onClick={gotoHome} className="navbar-center">
         <a className="btn btn-ghost text-xl">Crypto Tracker</a>
       </div>
-
+     
+       
       <div className="navbar-end">        
         <button className="btn btn-ghost btn-circle">
           <DayNight />
         </button>
+      </div>
+      <div className="absolute top-3 right-14">
+                    <SearchBar />
       </div>
     </div>
   );

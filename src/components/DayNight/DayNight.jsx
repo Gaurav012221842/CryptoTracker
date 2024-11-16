@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import './daynight.css'; // Import the CSS file for styles
-
+import './daynight.css';  
 function DayNight() {
   const [isDay, setIsDay] = useState(true);
 
   const toggleTheme = () => {
     setIsDay(!isDay);
-
-    // Apply the correct class to the body element
+ 
     if (isDay) {
       document.body.classList.remove('day');
       document.body.classList.add('night');
@@ -26,7 +24,7 @@ function DayNight() {
 
   return (
     <button onClick={toggleTheme} className="btn btn-ghost btn-circle">
-      {/* Switch the icon based on the current theme */}
+       
       {isDay ? '🌞' : '🌙'}
     </button>
   );

@@ -8,16 +8,15 @@ import MyLoader from "../PageLoader/PageLoader";
 function CoinTable( ) {
   const [page, setPage] = useState(1);
   const navigate=useNavigate();
-//   const {currency}=useContext(CurrencyContext)
+ 
     const {currency}=store();
   const { data, isLoading, isError, error } = useQuery(
     ['coins', page,currency],
     () => fetchCoinData(page, currency), 
     {
-    //   retry: 2,        // Retry fetching twice on failure
-    //   retryDelay: 1000, // Wait 1 second before retrying
-       cacheTime: 1000 * 60 * 5, // Cache data for 5 minutes
-      staleTime: 1000 * 60 * 1, // Mark data as fresh for 1 minute
+    
+       cacheTime: 1000 * 60 * 5, 
+      staleTime: 1000 * 60 * 1, 
     }
   );
 
@@ -147,7 +146,7 @@ export default CoinTable;
 //           <b>Yay! You have seen it all</b>
 //         </p>
 //       }
-//       // Optional: Pull down to refresh functionality
+//        
 //       refreshFunction={() => setItems([])} // Clear items to refresh
 //       pullDownToRefresh
 //       pullDownToRefreshThreshold={50}
